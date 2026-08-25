@@ -2,9 +2,9 @@
 #include <stdio.h>
 int main(){
      int a=5,b=4;
-    a= a*b;
-    b= a/b;
-    a= a/b;
+    c= a*b;
+    b= c/b;
+    a= c/b;
     printf("%d\n",a);
     printf("%d",b);
 }
