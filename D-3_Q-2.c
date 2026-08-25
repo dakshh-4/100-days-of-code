@@ -5,6 +5,7 @@ int main(){
     c= a*b;
     b= c/b;
     a= c/b;
-    printf("%d\n",a);
-    printf("%d",b);
+    printf("a=%d\n",a);
+    printf("b=%d",b);
+     return 0;
 }
