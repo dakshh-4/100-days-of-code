@@ -1,17 +1,15 @@
 //Write a program to input a year and check whether it is a leap year or not using conditional statements.
 #include <stdio.h>
-int main(void) {
-    int year;
-    printf("Enter a year: ");
-    scanf("%d", &year);
-    if (year % 400 == 0) {
-        printf("%d is a leap year.\n", year);
-    } else if (year % 100 == 0) {
-        printf("%d is not a leap year.\n", year);
-    } else if (year % 4 == 0) {
-        printf("%d is a leap year.\n", year);
-    } else {
-        printf("%d is not a leap year.\n", year);
+int main(){
+    int a;
+    printf("etnter a year: ");
+    scanf("%d",&a);
+    if (a%4==0){
+        printf("it is a leap year");
+    }
+    else
+    {
+        printf("it's not a leap year");
     }
     return 0;
 }
