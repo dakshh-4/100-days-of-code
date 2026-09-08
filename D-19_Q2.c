@@ -10,4 +10,5 @@ int main(){
         a= a/10;
     }
     printf("sum of all digits= %d",b);
+    return 0;
 }
