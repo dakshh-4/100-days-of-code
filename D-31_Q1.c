@@ -1,34 +1,38 @@
-//Search for an element in an array using linear search.
+//Check if the elements on the diagonal of a matrix are distinct.
 #include <stdio.h>
+#include <stdbool.h>
 
-int linearSearch(int arr[], int n, int key) {
+#define MAX 10
+
+bool areDiagonalElementsDistinct(int mat[MAX][MAX], int n) {
     for (int i = 0; i < n; i++) {
-        if (arr[i] == key) {
-            return i; 
+        for (int j = i + 1; j < n; j++) {
+            if (mat[i][i] == mat[j][j]) {
+                return false;
+            }
         }
     }
-    return -1; 
+    return true;
 }
 
 int main() {
-    int arr[] = {10, 25, 33, 47, 52, 68, 71};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int key;
-    printf("Enter element to search: ");
+    int n;
+    printf("Enter size of square matrix (n x n): ");
+    scanf("%d", &n);
 
-    printf("Array elements: ");
-    for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+    int mat[MAX][MAX];
+    printf("Enter matrix elements:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &mat[i][j]);
+        }
+    }
 
-    scanf("%d", &key);
-
-    int result = linearSearch(arr, n, key);
-
-    if (result != -1)
-        printf("Element %d found at index %d.\n", key, result);
-    else
-        printf("Element %d not found in the array.\n", key);
+    if (areDiagonalElementsDistinct(mat, n)) {
+        printf("Yes, diagonal elements are distinct.\n");
+    } else {
+        printf("No, diagonal elements are not distinct.\n");
+    }
 
     return 0;
 }
