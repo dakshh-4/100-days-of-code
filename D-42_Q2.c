@@ -1,17 +1,19 @@
-//Print each character of a string on a new line.
+//Convert a lowercase string to uppercase without using built-in functions.
 #include <stdio.h>
 
 int main(void) {
-    char input[256];
+    char str[1000];
 
     printf("Enter a string: ");
-    if (fgets(input, sizeof(input), stdin) == NULL) {
-        return 1;
+    fgets(str, sizeof(str), stdin);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32;
+        }
     }
 
-    for (int i = 0; input[i] != '\0' && input[i] != '\n'; i++) {
-        printf("%c\n", input[i]);
-    }
+    printf("Uppercase: %s", str);
 
     return 0;
 }
